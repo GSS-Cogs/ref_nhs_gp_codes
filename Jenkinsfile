@@ -21,7 +21,7 @@ pipeline {
                                                httpMode: 'GET',
                                                url: 'https://files.digital.nhs.uk/assets/ods/current/epraccur.zip',
                                                outputFile: 'in/epraccur.zip')
-                    unzip zipFile: 'in/epraccur.zip', dir: 'out'
+                    unzip zipFile: 'in/epraccur.zip', dir: 'in'
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
             }
             steps {
                 script {
-                    sh "csv2rdf -m annotated -t out/epraccur.csv -u epraccur.csv-metadata.json -o out/epraccur.ttl"
+                    sh "csv2rdf -m annotated -t in/epraccur.csv -u epraccur.csv-metadata.json -o out/epraccur.ttl"
                 }
             }
         }

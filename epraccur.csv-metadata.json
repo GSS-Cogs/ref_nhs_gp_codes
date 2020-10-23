@@ -7,7 +7,7 @@
 ],
   "tables": [
     {
-      "url": "epraccur.csv",
+      "url": "in/epraccur.csv",
       "dialect": {
         "header": false
       },
